@@ -1,0 +1,69 @@
+import java.awt.*;
+import javax.swing.*;
+import java.io.*;
+
+public class MyFrame
+{
+	public static void OpenMyFrame() throws IOException
+	{
+	JFrame   jf = new JFrame();         //  ウインドウフレームを作成
+    	jf.setBounds(20, 40, 940, 540);          // フレームサイズを設定
+    	jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);    //  閉じるボタン有効化
+	jf.add( createBasePanel() );
+    	jf.setVisible(true);               //  フレームを表示状態へ
+
+	// パネル作成
+	JPanel jp = createBasePanel();
+	jf.add(jp);
+
+    	// enableEvents(java.awt.AWTEvent.KEY_EVENT_MASK); //  キー入力の有効化
+	}
+
+	static JPanel createBasePanel(){
+
+	Font f = new Font("Monospaced", Font.BOLD, 100);
+
+	// JPanel jp = createPanel(Color.GREEN);
+
+	JPanel	jp = new JPanel();
+		jp.setBackground(Color.GREEN);
+		return( jp );
+
+	// パネルにJLabelを張る
+	JLabel jl = new JLabel("TEST");
+	jl.setForeground(Color.RED);
+	jl.setFont(f);
+	jp.add(jl);
+
+	// 2パネルを作成
+	JPanel jp2 = new JPanel();
+	jp2.setBackground(Color.BLACK);
+	jp.add(jp2);
+
+	// 2パネルにJLabel2を張る
+	JLabel jl2 = new JLabel("TESTT");
+	jl2.setForeground(Color.ORANGE);
+	jl2.setFont(f);
+	jp2.add(jl2);
+
+	// 3パネルを作成
+	JPanel jp3 = new JPanel();
+	jp3.setBackground(Color.GREEN);
+	jp.add(jp3);
+
+	// 3パネルにJLabel3を張る
+	JLabel jl3 = new JLabel("TESTTT");
+	jl3.setForeground(Color.WHITE);
+	jl3.setFont(f);
+	jp3.add(jl3);
+ }
+	/*
+	static JPanel createPanel( Color c )
+	{
+		JPanel	jp = new JPanel();
+		jp.setBackground( c );
+		return( jp );
+	}
+	*/
+
+}
